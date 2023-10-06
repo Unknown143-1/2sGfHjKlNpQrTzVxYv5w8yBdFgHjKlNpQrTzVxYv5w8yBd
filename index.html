@@ -21,6 +21,8 @@
 </head>
 <body>
     <div id="AndreaMosaic"></div>
+    <button id="play-button">Play</button>
+    <button id="stop-button" disabled>Stop</button>
     <script src="app/leaflet.js"></script>
     <script src="app/leafletzoom.js"></script>  
     <script src="app/Control.FullScreen.js"></script>  
@@ -1619,6 +1621,97 @@
             7000, // Height in Pixels
             mapOptions
             );
+
+  /** Get references to HTML elements
+    const playButton = document.getElementById('play-button');
+    const stopButton = document.getElementById('stop-button');
+
+    let speechSynthesisUtterance = new SpeechSynthesisUtterance();
+    let speaking = false;
+
+    // Function to start speaking the text
+    function startSpeaking() {
+        if (!speaking) {
+            const textToSpeak = `Dear AIRA F. MANDA
+
+As you embark on this new chapter in your journey, we want to take 
+a moment to reflect on the incredible moments we've shared 
+together here at SORECO I. From the very first day we crossed paths 
+in this vibrant space, to all the laughter, the camaraderie, and even 
+the occasional chika sessions, our time here has been truly special.
+
+We've celebrated each other's successes, supported one another 
+through challenges, and created memories that will forever hold a 
+special place in our hearts. Whether it was the late-night 
+brainstorming sessions, the impromptu coffee breaks, or the times 
+we rallied together to overcome obstacles, it's these moments that 
+define our coworking family.
+
+While we'll miss your daily presence and infectious spirit, we're 
+excited to see where your journey takes you next. Your dedication, 
+passion, and positive energy have been an inspiration to us all. 
+We have no doubt that you'll achieve great things in your new 
+adventure.
+
+As you step into this new chapter of your life, remember that the 
+bonds we've forged here are unbreakable. you'll always be a cherished 
+friend and colleague.
+
+Wishing you all the success, happiness, and fulfillment in the world. 
+Stay in touch, Will surely miss the coffee, chika session lunch Breaks, 
+time together and kwentohan here sa office.  Stay in touch, and 
+don't forget to drop by for a coffee or libak session whenever you 
+can. We'll be eagerly awaiting your updates and looking forward 
+to the day when our paths cross again. Farewell, frienie. May your 
+future be as bright and promising as the memories we've created 
+together. With warmest regards and heartfelt wishes,`;
+            speechSynthesisUtterance = new SpeechSynthesisUtterance(textToSpeak);
+            
+            // List available voices and select a Filipino-accented voice
+            const voices = window.speechSynthesis.getVoices();
+            const desiredVoice = voices.find((voice) => voice.lang.includes('fil'));
+            
+            if (desiredVoice) {
+                speechSynthesisUtterance.voice = desiredVoice;
+            }
+
+            speechSynthesisUtterance.addEventListener('end', () => {
+                speaking = false;
+                playButton.textContent = 'Play';
+                stopButton.disabled = true;
+            });
+
+            window.speechSynthesis.speak(speechSynthesisUtterance);
+            speaking = true;
+            playButton.textContent = 'Pause';
+            stopButton.disabled = false;
+        } else {
+            if (window.speechSynthesis.paused) {
+                window.speechSynthesis.resume();
+                playButton.textContent = 'Pause';
+            } else {
+                window.speechSynthesis.pause();
+                playButton.textContent = 'Resume';
+            }
+        }
+    }
+
+    // Event listener for the "Play" button
+    playButton.addEventListener('click', () => {
+        startSpeaking();
+    });
+
+    // Event listener for the "Stop" button
+    stopButton.addEventListener('click', () => {
+        if (speaking) {
+            window.speechSynthesis.cancel();
+            speaking = false;
+            playButton.textContent = 'Play';
+            stopButton.disabled = true;
+        }
+    });**/
     </script>
+		
+
 </body>
 </html>
