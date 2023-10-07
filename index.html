@@ -20,6 +20,10 @@
     </style>
 </head>
 <body>
+	 <audio id="myAudio" autoplay>
+        <source src="song/" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>  
     <div id="AndreaMosaic"></div>
     <script src="app/leaflet.js"></script>
     <script src="app/leafletzoom.js"></script>  
@@ -1619,6 +1623,14 @@
             7000, // Height in Pixels
             mapOptions
             );
+
+        document.addEventListener("DOMContentLoaded", function() {
+    // Delay the audio playback by 5 seconds
+    setTimeout(function() {
+        var audio = document.getElementById("myAudio");
+        audio.play();
+    }, 5000);
+});
     </script>
 </body>
 </html>
